@@ -13,8 +13,24 @@ import re
 #from pathlib import Path
 import base64
 from langgraph.graph import StateGraph, START, END
+import streamlit as st
 
 load_dotenv()
+
+def get_secret(key: str):
+    if key in st.secrets:
+        return st.secrets[key]
+    return os.getenv(key)
+
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+LANGSMITH_API_KEY = st.secrets["LANGSMITH_API_KEY"]
+TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
+
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY or ""
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY or ""
+os.environ["LANGSMITH_API_KEY"] = LANGSMITH_API_KEY or ""
+os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY or "
 
 # Schemas :-
 class Task(BaseModel):
