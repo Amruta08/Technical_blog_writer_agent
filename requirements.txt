@@ -1,0 +1,7 @@
+streamlit 
+langchain-community
+langgraph 
+langchain-openai 
+langchain-tavily 
+google-genai 
+pydantic
