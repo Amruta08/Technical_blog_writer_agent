@@ -30,7 +30,7 @@ TAVILY_API_KEY = st.secrets["TAVILY_API_KEY"]
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY or ""
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY or ""
 os.environ["LANGSMITH_API_KEY"] = LANGSMITH_API_KEY or ""
-os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY or "
+os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY or ""
 
 # Schemas :-
 class Task(BaseModel):
